@@ -2,3 +2,10 @@ Books/
 
 cookies.json
 *.log
+virtenv/
+Books/
+.ipynb_checkpoints/
+*.ipynb
+.idea/
+collection.json
+__pycache__/
