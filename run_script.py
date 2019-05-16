@@ -11,7 +11,7 @@ def run_app(credentials=None):
 
 	for book in bookIds:
 	    if book not in set([elem.split("(")[-1].replace(")","") for elem in os.listdir('Books')]):
-	        %%run safaribooks --cred {credentials} {book}
+	        %run safaribooks --cred {credentials} {book}
 	    else:
 	        print("BookId %s bereits vorhanden.", book)
 
