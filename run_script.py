@@ -4,6 +4,7 @@ import argparse
 import os
 import sys
 import requests
+import subprocess
 
 def run_app(credentials=None):
 	with open("collection.json", 'r') as file:
@@ -14,8 +15,8 @@ def run_app(credentials=None):
 	for book in bookIds:
 	    if book not in set([elem.split("(")[-1].replace(")","") for elem in os.listdir('Books')]):
 	        command = "safaribooks --cred {0} {1}".format(credentials, book)
-	        print(command)
-	        os.system(command)
+	        subprocess.Popen(command, shell=True)
+
 	    else:
 	        print("BookId %s bereits vorhanden.", book)
 
